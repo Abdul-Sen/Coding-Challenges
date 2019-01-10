@@ -42,3 +42,26 @@ function isValidIp(str) {
     }
     return false;
 }
+
+/*
+Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+*/
+function humanReadable(seconds) {
+    let sec = Math.floor(seconds % 3600 % 60);
+    let min = Math.floor(seconds % 3600 / 60);
+    let hours = Math.floor(seconds / 3600); 
+    if(sec <9)
+    {
+        sec = "0" + sec;
+    }
+    if(min<9)
+    {
+        min = "0" + min;
+    }
+    if(hours <9)
+    {
+        hours = "0" + hours;
+    }
+    
+    return hours + ":" + min+":" + sec;
+ }
