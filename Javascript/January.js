@@ -83,7 +83,7 @@ var uniqueInOrder = function (iterable) {
   for (let i = 0; i < iterable.length; i++) {
     if(i == iterable.length -1)
     {
-      if(iterable[i] == iterable[i-1])
+      if(iterable[i] != iterable[i-1])
       {
         TempArr.push(iterable[i]);
       }
@@ -96,5 +96,5 @@ var uniqueInOrder = function (iterable) {
   }
 }
 
-arr = [1,2,2,3,3];
+arr = [ 'A', 'A', 'D' ];
 uniqueInOrder(arr)
