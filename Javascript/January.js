@@ -85,12 +85,16 @@ var uniqueInOrder = function (iterable) {
     {
       if(iterable[i] == iterable[i-1])
       {
-        TempArr = iterable[i];
+        TempArr.push(iterable[i]);
       }
-      return TempArr[i];
+      console.log(TempArr)
+      return TempArr;
     }
     if (iterable[i] != iterable[i + 1]) {
-      TempArr = iterable[i];
+      TempArr.push(iterable[i]);
     }
   }
 }
+
+arr = [1,2,2,3,3];
+uniqueInOrder(arr)
