@@ -62,6 +62,35 @@ function humanReadable(seconds) {
     {
         hours = "0" + hours;
     }
-    
+
     return hours + ":" + min+":" + sec;
  }
+
+/*
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items
+without any elements with the same value next to each other and preserving the original order of elements.
+*/
+
+var uniqueInOrder = function (iterable) {
+
+  if (!Array.isArray(iterable)) //converts to array if not an array
+  {
+    iterable = iterable.split("");
+    console.log(iterable);
+  }
+
+  let TempArr = [];
+  for (let i = 0; i < iterable.length; i++) {
+    if(i == iterable.length -1)
+    {
+      if(iterable[i] == iterable[i-1])
+      {
+        TempArr = iterable[i];
+      }
+      return TempArr[i];
+    }
+    if (iterable[i] != iterable[i + 1]) {
+      TempArr = iterable[i];
+    }
+  }
+}
