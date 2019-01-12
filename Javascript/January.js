@@ -96,5 +96,27 @@ var uniqueInOrder = function (iterable) {
   }
 }
 
-arr = [ 'A', 'A', 'D' ];
-uniqueInOrder(arr)
+/*
+In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+*/
+
+function highAndLow(numbers){
+    numbers = numbers.split(" ");
+
+    let MIN = numbers[0];
+    let MAX = numbers[0];
+
+    for(let i =0; i< numbers.length; i++)
+    {
+        if(MIN> numbers[i])
+        {
+            MIN = numbers[i];
+        }
+
+        if(MAX< numbers[i])
+        {
+            MAX = numbers[i];
+        }
+    }
+    return (MAX+ " " + MIN);
+}
