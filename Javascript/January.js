@@ -102,13 +102,13 @@ In this little assignment you are given a string of space separated numbers, and
 
 function highAndLow(numbers){
     numbers = numbers.split(" ");
-
+    console.log(typeof numbers[0]);
     let MIN = numbers[0];
     let MAX = numbers[0];
 
     for(let i =0; i< numbers.length; i++)
     {
-        if(MIN> numbers[i])
+        if(MIN > numbers[i])
         {
             MIN = numbers[i];
         }
@@ -120,3 +120,21 @@ function highAndLow(numbers){
     }
     return (MAX+ " " + MIN);
 }
+
+
+/*
+As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+*/
+var gimme = function (inputArray) {
+    let arrCopy = [...inputArray]; //ES7 Spread syntax method of cloning an array
+    arrCopy.sort((a, b) => a - b); //sort() defaultly sorts alphabatically, so we need a function that checks numerically
+
+    for(let i =0; i< inputArray.length; i++)
+    {
+        if(inputArray[i] == arrCopy[1]) //finding middle num
+        {
+            return i;
+        }
+    }
+  };
