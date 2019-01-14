@@ -138,3 +138,26 @@ var gimme = function (inputArray) {
         }
     }
   };
+
+/*
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 integers. No floats or empty arrays will be passed.
+
+For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+*/
+
+function sumTwoSmallestNumbers(originalArray) {
+    let numbers = [...originalArray];
+    let MIN = Math.min(...numbers); //destruction assignment syntax turns numbers into distint variables
+                                   //, which is what the min() function needs to determine the minimum value
+
+    numbers.splice(numbers.indexOf(MIN),1); //poping minimum value
+    let MIN2  = Math.min(...numbers); //finding new minimum
+    return MIN + MIN2;
+};
+
+
+//ALTERNATIVE METHOD: Just sort the array and find return the first two elements!. NOTE: The following implimentation is not done by me.
+// function sumTwoSmallestNumbers(numbers){  
+//     numbers = numbers.sort(function(a, b){return a - b; });
+//     return numbers[0] + numbers[1];
+//   };
