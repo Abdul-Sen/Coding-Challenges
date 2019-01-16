@@ -161,3 +161,30 @@ function sumTwoSmallestNumbers(originalArray) {
 //     numbers = numbers.sort(function(a, b){return a - b; });
 //     return numbers[0] + numbers[1];
 //   };
+
+
+/*
+See if a string contains same number of x and O's
+*/
+function XO(str) {
+    str = str.toUpperCase();
+    let X = 0;
+    let O = 0;
+    for(let i =0 ; i <str.length; i++)
+    {
+        
+        switch(str.charAt(i)) {
+            case('X'):
+            X++;
+            break;
+            case('O'):
+            O++;
+            break;
+        }
+    }
+    if(X == O)
+    {
+        return true;
+    }
+    return false;
+}
