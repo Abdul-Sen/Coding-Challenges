@@ -188,3 +188,29 @@ function XO(str) {
     }
     return false;
 }
+
+function alphabetPosition(text) {
+    let charPos = "";
+    
+    for(let i = 0; i< text.length; i++)
+    {
+        if(/^[a-zA-Z]+$/.test(text[i])) //if all english alphabets
+        {
+            if(/^[A-Z]+$/.test(text[i])) //if uppercase english alpabet
+            {
+                charPos += text.charCodeAt(i) - 64;
+            }
+            
+            if(/^[a-z]+$/.test(text[i])) //if lowercase english alphabet
+            {
+                charPos += text.charCodeAt(i) - 96;
+            }
+            if(i != text.length-1)
+            {
+                charPos += " ";
+            }
+        }
+    }
+    return charPos;
+  }
+
