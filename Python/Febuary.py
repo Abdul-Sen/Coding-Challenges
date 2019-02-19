@@ -14,3 +14,35 @@ def DNA_strand(dna): #func declare
         elif c == "C":
             my_str += "G"
     return my_str
+'''
+    Q- Write a function that produces following output:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+'''
+def accum(givenString):
+    result = ""
+    index = 0
+    while index < len(givenString): #
+        result += givenString[index].upper()
+        curr = 0
+        while curr < index:
+            result += givenString[index].lower()
+            curr = curr + 1
+        if index != len(givenString) -1:
+            result += "-"
+        index = index + 1
+    return result
+'''
+    # ALTERNATIVE DONE BY SOMEONE ELSE
+
+def accum(givenString):
+    result = ""
+    for index in range(len(givenString)): #
+        result += givenString[index].upper()
+        for curr in range(index):
+            result += givenString[index].lower()
+        if index != len(givenString) -1:
+            result += "-"
+    return result
+'''

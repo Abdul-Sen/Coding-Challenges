@@ -15,3 +15,27 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
     }
     return false;
 }
+
+
+/*
+    Write a function that produces following output:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+*/
+function accum(s) {
+    let result = "";
+    for(let i =0; i < s.length; i++)
+    {
+        result += s[i].toUpperCase();
+        for(let j = 0; j < i; j++)
+        {
+            result += s[i].toLowerCase();
+        }
+        if(i != s.length -1)
+            result += "-";
+    }
+    return result;
+}
+
+console.log(accum("ZpglnRxqenU"));
