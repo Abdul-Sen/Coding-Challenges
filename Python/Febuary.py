@@ -45,4 +45,26 @@ def accum(givenString):
         if index != len(givenString) -1:
             result += "-"
     return result
+
+def accum(givenString):
+    result = ""
+    for idx, ele in enumerate(givenString):
+        result += ele.upper()
+        for _ in range(idx):
+            result += ele.lower()
+        if idx < len(givenString) - 1:
+            result += "-"
+    return result
+
 '''
+
+'''
+In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+'''
+def make_negative( number ):
+    if number == 0:
+        return number
+    elif number < 0:
+        return number
+    else:
+        return number * (-1)
