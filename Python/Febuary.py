@@ -67,4 +67,14 @@ def make_negative( number ):
     elif number < 0:
         return number
     else:
-        return number * (-1)
+        return number * (-1)    
+
+'''
+Remove all spaces from a string
+'''
+def no_space(x):
+    result = ""
+    for currentChar in x:
+        if currentChar != " ":
+            result += currentChar
+    return result
