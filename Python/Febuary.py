@@ -78,3 +78,14 @@ def no_space(x):
         if currentChar != " ":
             result += currentChar
     return result
+
+'''
+Find summation of all numbers before num
+'''
+def summation(num):
+    i = 1
+    sum = 0
+    while(i <= num):
+        sum += i
+        i = i + 1
+    return sum
