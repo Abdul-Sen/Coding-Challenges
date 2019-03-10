@@ -89,3 +89,22 @@ def summation(num):
         sum += i
         i = i + 1
     return sum
+
+'''
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+The output should be two capital letters with a dot seperating them.
+'''
+def abbrevName(name):
+    abbrev = name[0].upper()
+    abbrev += '.'
+    i = 0
+    while True:
+        if name[i] == ' ':
+            i+= 1
+            break
+        i += 1
+    abbrev += name[i].upper()
+    return abbrev
+abbrevName("Abdul Rehman")
+print(abbrevName("Abdul Rehman"))
